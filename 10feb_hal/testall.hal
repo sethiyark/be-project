@@ -1,0 +1,13 @@
+loadrt hal_parport cfg="0x378 out"
+loadusr -Wn testall pyvcp -c testall testall.xml
+loadrt threads name1=porttest period1=1000000
+addf parport.0.read porttest
+addf parport.0.write porttest
+net pin01 testall.btntest parport.0.pin-01-out testall.led-01 parport.0.pin-02-out testall.led-02 parport.0.pin-03-out testall.led-03 parport.0.pin-04-out testall.led-04 parport.0.pin-05-out testall.led-05 parport.0.pin-06-out testall.led-06 parport.0.pin-07-out testall.led-07 parport.0.pin-08-out testall.led-08 parport.0.pin-09-out testall.led-09 parport.0.pin-14-out testall.led-14 parport.0.pin-16-out testall.led-16 parport.0.pin-17-out testall.led-17
+
+net pin10 parport.0.pin-10-in testall.led-10
+net pin11 parport.0.pin-11-in testall.led-11
+net pin12 parport.0.pin-12-in testall.led-12
+net pin13 parport.0.pin-13-in testall.led-13
+net pin15 parport.0.pin-15-in testall.led-15
+start

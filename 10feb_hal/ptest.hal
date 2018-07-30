@@ -1,0 +1,23 @@
+loadrt hal_parport cfg="0x378 out"
+loadusr -Wn ptest pyvcp -c ptest ptest.xml
+loadrt threads name1=porttest period1=1000000
+addf parport.0.read porttest
+addf parport.0.write porttest
+net pin01 ptest.btn01 parport.0.pin-01-out ptest.led-01
+net pin02 ptest.btn02 parport.0.pin-02-out ptest.led-02
+net pin03 ptest.btn03 parport.0.pin-03-out ptest.led-03
+net pin04 ptest.btn04 parport.0.pin-04-out ptest.led-04
+net pin05 ptest.btn05 parport.0.pin-05-out ptest.led-05
+net pin06 ptest.btn06 parport.0.pin-06-out ptest.led-06
+net pin07 ptest.btn07 parport.0.pin-07-out ptest.led-07
+net pin08 ptest.btn08 parport.0.pin-08-out ptest.led-08
+net pin09 ptest.btn09 parport.0.pin-09-out ptest.led-09
+net pin14 ptest.btn14 parport.0.pin-14-out ptest.led-14
+net pin16 ptest.btn16 parport.0.pin-16-out ptest.led-16
+net pin17 ptest.btn17 parport.0.pin-17-out ptest.led-17
+net pin10 parport.0.pin-10-in ptest.led-10
+net pin11 parport.0.pin-11-in ptest.led-11
+net pin12 parport.0.pin-12-in ptest.led-12
+net pin13 parport.0.pin-13-in ptest.led-13
+net pin15 parport.0.pin-15-in ptest.led-15
+start

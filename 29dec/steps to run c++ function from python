@@ -1,0 +1,5 @@
+steps to run c++ function in python
+1. Place .c and .py file in one folder
+2. Execute following
+	gcc -shared -fPIC -I/usr/include/python2.7/ -lpython2.7 -o [c_filename].so [c_filename].c
+3. Execute python program
